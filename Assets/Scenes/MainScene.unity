@@ -4490,6 +4490,24 @@ Prefab:
       propertyPath: m_RootOrder
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 114271799944629610, guid: d5f349add45cee94990c22d14ba8cfb8,
+        type: 2}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114927374884343732, guid: d5f349add45cee94990c22d14ba8cfb8,
+        type: 2}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1611653532147506, guid: d5f349add45cee94990c22d14ba8cfb8, type: 2}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1866053272948164, guid: d5f349add45cee94990c22d14ba8cfb8, type: 2}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: d5f349add45cee94990c22d14ba8cfb8, type: 2}
   m_IsPrefabParent: 0
@@ -5321,6 +5339,11 @@ Prefab:
         type: 2}
       propertyPath: m_PlaybackSpeed
       value: 0.75
+      objectReference: {fileID: 0}
+    - target: {fileID: 114109201190612782, guid: 53891ef637767e94ea1908366268d17d,
+        type: 2}
+      propertyPath: m_Enabled
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 53891ef637767e94ea1908366268d17d, type: 2}

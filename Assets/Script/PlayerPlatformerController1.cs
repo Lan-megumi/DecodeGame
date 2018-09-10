@@ -8,9 +8,10 @@ public class PlayerPlatformerController1 : PhysicsObject {
     public float maxSpeed = 7;
     private SpriteRenderer spriteRenderer;
     Vector2 move = Vector2.zero;                    //共用移动
+    private Animator animator;
 
 //----------------------------------------
-    private Animator animator;
+
     public static PlayerPlatformerController1 _instance;
     private bool IfSteal,IfBorad,IfChest,IfStudyObj,IfFridge,IfLadder,IfCheckLadder,Iffchest,IffToiletKey,IfMasterKey=false;
 
