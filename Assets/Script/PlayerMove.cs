@@ -8,7 +8,13 @@ public class PlayerMove : PhysicsObject {
     Vector2 move = Vector2.zero;   
 	// Use this for initialization
     private Animator animator;
+	private ChoseSceManager choseSceManager;
+    private GameObject ScrManager;
 
+    void Start(){
+        ScrManager=GameObject.Find("ChoseSceManager");
+        choseSceManager=ScrManager.GetComponent<ChoseSceManager>();
+    }
 	 void Awake () 
     {
         spriteRenderer = GetComponent<SpriteRenderer> (); 
@@ -47,12 +53,17 @@ public class PlayerMove : PhysicsObject {
 
 		if (Collections.gameObject.name==("Door_open")&&Input.GetKeyDown(KeyCode.Z))
 		{
-			Debug.Log("Door_open");
+            int num = ComputerScript._instance.GetLoad();
+			Debug.Log("num"+num);
+            choseSceManager.GoScenc(num);
+
+           
 		}
 
 		if (Collections.gameObject.name==("Chose_Computer")&&Input.GetKeyDown(KeyCode.Z))
 		{
 			Debug.Log("Chose_Computer");
+            ComputerScript._instance.ShowUi(true);
 		}
 	}
 }

@@ -34,7 +34,7 @@ public class OutScene : MonoBehaviour {
 				
 			}else
 			{	
-				SceneManager.LoadScene(1);
+				SceneManager.LoadScene(3);
 			}
 		}
 			
@@ -43,7 +43,7 @@ public class OutScene : MonoBehaviour {
 	public void Skip(){
 		moive.Stop();
 		this.GetComponent<AudioSource>().Stop();
-		SceneManager.LoadScene(1);
+		SceneManager.LoadScene(3);
 	}
 	IEnumerator Skip0(){
 		yield return new WaitForSeconds(4f);

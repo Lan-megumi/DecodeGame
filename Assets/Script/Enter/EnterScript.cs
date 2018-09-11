@@ -60,7 +60,7 @@ public class EnterScript : MonoBehaviour {
 		
 	}
 	public void GoVoid(){
-		SceneManager.LoadScene(3);
+		SceneManager.LoadScene(1);
 	}
 	public void EndVoid(){
 		Debug.Log("Exit Game!");
