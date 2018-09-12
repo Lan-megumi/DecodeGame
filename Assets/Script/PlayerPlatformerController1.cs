@@ -2,6 +2,9 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using System.IO;
+using System.Runtime.Serialization.Formatters.Binary;
+using LitJson;
 
 public class PlayerPlatformerController1 : PhysicsObject {
 
@@ -22,8 +25,11 @@ public class PlayerPlatformerController1 : PhysicsObject {
     // public RawImage WinImage;
     public GameObject Passwordlock;
     private int vv,zz = 0; //定义一个v/Z数值用来计算按V的次数以及初始值
+   // public GameObject doorPositions;//通关关卡
+    public int doorPosition;//门的定位
 
 	KeyStructural Get_Structural=new KeyStructural();
+
 
 //----------------------------------------
     void Awake () 
@@ -362,8 +368,13 @@ public class PlayerPlatformerController1 : PhysicsObject {
             {
                 if (Get_Structural.ReedStruct().winKnief!=0)
                 {
+                    if(doorPosition == 0&&doorPosition<1){
+                        doorPosition++;
+                    }
                     TextScript._instance.ChangeText("收容成功！");
+                    SaveByjson();
                     StartCoroutine("WinPlay");
+               // Time0._instance.Settlement();
                 }else{
                     TextScript._instance.ChangeText("还未达成任务目标");
                 }
@@ -443,6 +454,26 @@ public class PlayerPlatformerController1 : PhysicsObject {
     }
     public void AddKnief(){
         Get_Structural.WriteWinKnief(1);
+    }
+    //创建Save对象并存储当前游戏状态信息
+    private Save GreatSaveGO(){
+        Save save = new Save();
+        //把通关信息保存下来
+        save.doors.Add(doorPosition);
+        return save;
+    }
+    private void SaveByjson(){
+         Save save = GreatSaveGO();
+        string filePath = Application.dataPath + "/StreamingFile" + "/byJson.json";
+        //利用JsonMapper将save对象转换为Json格式的字符串
+        string saveJsonStr = JsonMapper.ToJson(save);
+        //将这个字符串写入到文件中
+        //创建一个StreamWriter
+        StreamWriter sw = new StreamWriter(filePath);
+        sw.Write(saveJsonStr);
+        //关闭StreamWriter
+        sw.Close();
+
     }
 
 }

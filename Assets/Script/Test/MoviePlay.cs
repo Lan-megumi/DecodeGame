@@ -40,8 +40,8 @@ public class MoviePlay : MonoBehaviour {
 		{
 			WinMovie.SetActive(false);
 			Debug.Log("WinMovie End");
-			SceneManager.LoadScene(0);
-
+			// SceneManager.LoadScene(1);
+			 Time0._instance.Settlement();
 			If_WinM=false;
 
 		}

@@ -7,6 +7,7 @@ using UnityEngine.SceneManagement;
 public class ChoseSceManager : MonoBehaviour {
 
 	public GameObject Door_open,Door_close,Chose_open,Chose_close;
+	public GameObject two;//第二关显示
 	// Use this for initialization
 	
 	void Start(){
@@ -51,5 +52,4 @@ public class ChoseSceManager : MonoBehaviour {
 		}
 		
 	}
-	
 }
